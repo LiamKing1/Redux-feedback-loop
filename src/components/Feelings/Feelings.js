@@ -8,13 +8,18 @@ function Feelings() {
     const storeItems = useSelector(store => store.feelings); // my GETTER
     const dispatch = useDispatch();
 
+    const [newFeelings, setNewFeelings] = useState('')
+
     const handleFeelings = (event) => {
-        dispatch({type: 'SHARE_FEELINGS', payload: event.target.value});
+        dispatch({type: 'SHARE_FEELINGS', payload: newFeelings});
     }
 
     return(
         <div>
-
+            <pre>{JSON.stringify(storeItems)}</pre>
+            <input
+            type='number' min='0' max='5'>
+            </input>
         </div>
     )
 }

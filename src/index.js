@@ -6,9 +6,10 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
+// import { takeEvery, }
 
 // function* getElements() {
-
+//     yield 
 // }
 
 // function* postElements() {
