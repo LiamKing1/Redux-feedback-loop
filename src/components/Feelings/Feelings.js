@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import ProgressBar from "../ProgressBar/ProgressBar";
 
 function Feelings() {
 
@@ -16,8 +17,11 @@ function Feelings() {
 
     return (
         <div>
-            <pre>{JSON.stringify(storeItems)}</pre>
+            <ProgressBar step={1} />
+            {/* <pre>{JSON.stringify(storeItems)}</pre> */}
+            <p> {storeItems}</p>
             <form onSubmit={handleFeeling}>
+                <h1> How are you feeling today? </h1>
                 <input
                     type='number'
                     min='0'
@@ -27,6 +31,7 @@ function Feelings() {
                     required>
                 </input>
             </form>
+            <button onClick={() => history.push('/page/one')} className="button">Next</button>
         </div>
     )
 }
