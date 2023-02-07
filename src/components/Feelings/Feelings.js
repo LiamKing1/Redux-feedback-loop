@@ -12,26 +12,36 @@ function Feelings() {
     const [newFeeling, setNewFeeling] = useState('')
 
     const handleFeeling = () => {
-        dispatch({ type: 'SHARE_FEELINGS', payload: newFeeling });
-    }
+        // event.prevenDefault();
+        dispatch({
+            type: 'SHARE_FEELINGS',
+            payload: newFeeling
+        });
+        setNewFeeling('');
+        history.push('/page/one');
+    };
 
     return (
-        <div>
+        <div className="feelings">
             <ProgressBar step={1} />
             {/* <pre>{JSON.stringify(storeItems)}</pre> */}
-            <p> {storeItems}</p>
-            <form onSubmit={handleFeeling}>
+            {/* <p> {storeItems}</p> */}
                 <h1> How are you feeling today? </h1>
                 <input
                     type='number'
+                    className="input"
+                    placeholder="0"
                     min='0'
                     max='5'
                     value={newFeeling}
                     onChange={(event) => setNewFeeling(event.target.value)}
-                    required>
+                >
                 </input>
-            </form>
-            <button onClick={() => history.push('/page/one')} className="button">Next</button>
+            { newFeeling  !== '' &&
+            <button type='submit' onClick={() => handleFeeling()} className="button">Next</button>
+            }
+            <br>
+            </br>
         </div>
     )
 }

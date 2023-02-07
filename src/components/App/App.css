@@ -21,3 +21,24 @@
 h4 {
   font-style: italic;
 }
+
+.feelings {
+  padding: 10px;
+}
+
+.input {
+  block-size: 30px;
+  inline-size: 40px;
+}
+
+.input2 {
+  block-size: 30px;
+  inline-size: 200px;
+  text-align: center;
+  text-decoration-line: overline;
+}
+
+.button {
+  font-size: xx-large;
+  inline-size: 150px;
+}

@@ -6,27 +6,17 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import logger from 'redux-logger';
 import { Provider } from 'react-redux';
-import axios from 'axios';
-// import { takeEvery, }
-
-// function* getElements() {
-//     yield 
-// }
-
-// function* postElements() {
-
-// }
 
 const feelings = (state = 0, action) => {
-    console.log('In FEELINGS function', action);
+    // console.log(`In FEELINGS function ${action.payload}`);
     if (action.type === 'SHARE_FEELINGS') {
-        return action.payload;
+       return action.payload;
     }
     return state;
 }
 
 const understanding = (state = 0, action) => {
-    console.log('In UNDERSTANDING function', action);
+    // console.log(`In UNDERSTANDING function ${action.payload}`);
     if (action.type === 'UNDERSTANDING_LVL') {
         return action.payload;
     }
@@ -34,15 +24,15 @@ const understanding = (state = 0, action) => {
 }
 
 const support = (state = 0, action) => {
-    console.log('In FEELINGS function', action);
+    // console.log(`In SUPPORT function ${action.payload}`);
     if (action.type === 'SUPPORT_LVL') {
         return action.payload;
     }
     return state;
 }
 
-const comments = (state = 0, action) => {
-    console.log('In FEELINGS function', action);
+const comments = (state = '', action) => {
+    // console.log(`In COMMENTS function ${action.payload}`);
     if (action.type === 'COMMENT') {
         return action.payload;
     }

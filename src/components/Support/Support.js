@@ -11,27 +11,37 @@ function Support() {
 
     const [newSupport, setNewSupport] = useState('')
 
-    const handleFeeling = () => {
-        dispatch({ type: 'SUPPORT_LVL', payload: newSupport });
-    }
+    const handleSupport = () => {
+        // event.prevenDefault();
+        dispatch({
+            type: 'SUPPORT_LVL',
+            payload: newSupport
+        });
+        setNewSupport('');
+        history.push('/page/three');
+    };
 
     return (
-        <div>
+        <div className="support">
             <ProgressBar step={3} />
             {/* <pre>{JSON.stringify(storeItems)}</pre> */}
-            <p> {storeItems}</p>
-            <form onSubmit={handleFeeling}>
+            {/* <p> {storeItems}</p> */}
+            {/* <form onSubmit={handleSupport}> */}
                 <h1> How well do you feel you are being supported? </h1>
                 <input
                     type='number'
+                    className="input"
+                    placeholder="0"
                     min='0'
                     max='5'
                     value={newSupport}
                     onChange={(event) => setNewSupport(event.target.value)}
                     required>
                 </input>
-            </form>
-            <button onClick={() => history.push('/page/three')} className="button">Next</button>
+                <button onClick={() => handleSupport()} className="button">Next</button>
+            {/* </form> */}
+            <br>
+            </br>
         </div>
     )
 }
