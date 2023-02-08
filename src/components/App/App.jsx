@@ -23,13 +23,13 @@ function App() {
             <Route exact path='/'>
               <Feelings />
             </Route>
-            <Route exact path='/page/one'>
+            <Route exact path='/understanding'>
               <Understanding />
             </Route>
-            <Route exact path='/page/two'>
+            <Route exact path='/support'>
               <Support />
             </Route>
-            <Route exact path='/page/three'>
+            <Route exact path='/comments'>
               <Comments />
             </Route>
             <Route exact path='/page/review'>

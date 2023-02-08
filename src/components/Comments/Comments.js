@@ -18,30 +18,31 @@ function Comments() {
             payload: newComment
         });
         setNewComment('');
-        history.push('/review')
+        history.push('/page/review')
     }
 
     return (
         <div className="comments">
             <ProgressBar step={4} />
-            {/* <pre>{JSON.stringify(storeItems)}</pre> */}
-            {/* <p> {storeItems}</p> */}
-            {/* <form onSubmit={handleComment}> */}
-                <h1> Share any comment you feel should be shared!</h1>
-                <input
-                    type='text'
-                    className="input2"
-                    placeholder="ENTER COMMENT"
-                    min='0'
-                    max='250'
-                    value={newComment}
-                    onChange={(event) => setNewComment(event.target.value)}
-                    required>
-                </input>
-                <button onClick={() => handleComment()} className="button">Next</button>
-            {/* </form> */}
+            <h1> Share any comment you feel should be shared!</h1>
+            <input
+                type='text'
+                className="input2"
+                placeholder="ENTER COMMENT"
+                min='0'
+                max='250'
+                value={newComment}
+                onChange={(event) => setNewComment(event.target.value)}
+                required>
+            </input>
             <br>
             </br>
+            <br>
+            </br>
+            {newComment !== '' &&
+                <button type='submit' onClick={() => handleComment()} className="button">Next</button>
+            }
+    
         </div>
     )
 }
